@@ -1,0 +1,28 @@
+{# 
+	получить картинку
+	*params.src string = название файла картинки
+	params.lazy bool = ленивая загрузка
+	params.alt string = атрибут alt
+ #}
+{% macro get(params) %}
+	{% set tag = params.lazy ? 'data-src' : 'src' %}
+	{% set class = params.class.length > 0 ? 'class="{{params.class}}"' : '' %}
+	<img {{tag}}="/img/{{params.src}}" alt="{{ params.alt|length > 0 ? params.alt : 'image' }}" {{class}}>
+{% endmacro %}
+
+
+{# 
+	получить svg
+	*params.src string = название файла svg буз расширения
+	params.img bool = вывести тег img
+	params.lazy bool = ленивая загрузка
+	params.alt string = атрибут alt картинки
+ #}
+{% macro getSvg(params) %}
+	{% if params.img %}
+		{% set tag = params.lazy ? 'data-src' : 'src' %}
+		<img {{tag}}="/img/svg/{{params.src}}.svg" alt="{{ params.alt|length > 0 ? params.alt : 'image' }}">
+	{% else %}
+		{{ getFile('img/svg/' ~ params.src ~ '.svg') }}
+	{% endif %}
+{% endmacro %}

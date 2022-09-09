@@ -1,0 +1,7 @@
+{
+    "status": "error",
+    "msg": "Ваше сообщение успешно отправлено",
+    "fields": {
+        "email": "invalid email"
+    }
+}

@@ -1,0 +1,95 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    padding: 20px;
+    width: 100%;
+    max-width: fit-content;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition-property: background-color, color, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+
+    &.disabled,
+    &[disabled] {
+        opacity: 0.2;
+        pointer-events: none;
+    }
+
+    &.btn-pink {
+        color: #fff;
+        background-color: #e71a95;
+        &:hover {
+            background-color: #ab166f;
+        }
+    }
+
+    &.btn-white {
+        color: #000;
+        background-color: #fff;
+        &:hover {
+            color: #fff;
+            background-color: #e71a95;
+        }
+    }
+
+    &.btn-dWhite {
+        color: #fff;
+        border-color: #fff;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &.btn-arrow {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(#000, 0.05);
+        border-width: 0;
+        border-radius: 10px;
+        .preloader {
+            transform: scale(0.35);
+            div {
+                background-color: #000 !important;
+            }
+        }
+        &:hover {
+            background-color: rgba(#000, 0.15);
+        }
+    }
+
+    @media (max-width: $max_md) {
+        font-size: 18px;
+    }
+
+    @media (max-width: $max_s) {
+        font-size: 16px;
+    }
+}
+
+.loading-btn {
+    position: relative;
+
+    .preloader {
+        position: absolute;
+        transform: scale(0.75);
+        display: none;
+    }
+
+    &.loading {
+        pointer-events: none;
+        .text,
+        img,
+        svg {
+            opacity: 0;
+        }
+        .preloader {
+            display: block;
+        }
+    }
+}

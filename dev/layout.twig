@@ -1,0 +1,26 @@
+{% import "macros::img.twig" as img %}
+{% import "macros::server.twig" as server %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{{pageTitle}}
+		</title>
+		<script>
+			{{ getFile('./js/inline.js') }}</script>
+		<link rel="stylesheet" href="/css/index.min.css">
+	</head>
+	<body>
+		<div class="site-wrap">
+			{% include "header.twig" %}
+			<main class="main"> {% block main %}{% endblock %}
+				</main>
+				{% include "footer.twig" %}
+			</div>
+			<script src="/js/index.min.js"></script>
+		</body>
+	</html>

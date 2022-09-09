@@ -1,0 +1,122 @@
+.section-growing {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        linear-gradient(180deg, #006d85 0%, #40c0dc 100%);
+    border-radius: 30px 30px 0px 0px;
+    padding: 0;
+    color: #fff;
+    overflow: hidden;
+
+    .row {
+        position: relative;
+    }
+
+    .col-info {
+        max-width: 70%;
+        padding: 110px 0;
+    }
+
+    .col-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: fit-content;
+        display: flex;
+        img {
+            max-width: 100%;
+        }
+        img:nth-child(2) {
+            display: none;
+        }
+    }
+
+    .section-title {
+        font-size: 72px;
+        text-align: left;
+        margin-bottom: 70px;
+    }
+
+    .description {
+        font-size: 36px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 90px;
+        max-width: 420px;
+    }
+
+    @media (max-width: $max_lg) {
+        .col-img {
+            right: -160px;
+            max-width: 600px;
+        }
+
+        .section-title {
+            font-size: 48px;
+        }
+    }
+
+    @media (max-width: $max_md) {
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    @media (max-width: $max_sm) {
+        padding-top: 50px;
+
+        .col-info {
+            padding: 0;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        .col-img {
+            position: static;
+            max-width: 100%;
+            justify-content: center;
+            margin-top: -30%;
+            img:nth-child(1) {
+                display: none;
+            }
+            img:nth-child(2) {
+                display: block;
+            }
+        }
+
+        .section-title {
+            margin: 0 auto;
+            font-size: 28px;
+            text-align: center;
+            max-width: 324px;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 40px;
+        }
+
+        .description {
+            background: url(../img/polygon.svg) no-repeat center top / cover;
+            color: #e71a95;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            width: 249px;
+            height: 145px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        .btn {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: $max_s) {
+        padding-top: 40px;
+
+        .content {
+            padding-bottom: 40px;
+        }
+    }
+}

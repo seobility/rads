@@ -1,0 +1,66 @@
+.section-faq {
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .accord {
+        border-bottom: 1px solid #eee;
+        padding: 30px 0;
+    }
+
+    .accord-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-right: 40px;
+        }
+        .icon {
+            @extend .icon-close;
+            transform: rotate(45deg);
+            span::before,
+            span::after {
+                background-color: #e71a95;
+            }
+        }
+    }
+
+    .accord-body {
+        .accord-content {
+            font-size: 16px;
+            padding-top: 20px;
+        }
+    }
+
+    .accord[data-collapse='open'] {
+        .accord-trigger .icon {
+            transform: rotate(0);
+            span::before,
+            span::after {
+                background-color: #000;
+            }
+        }
+    }
+
+    @media (max-width: $max_md) {
+        .section-title {
+            margin-bottom: 20px;
+        }
+
+        .accord-trigger {
+            .title {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media (max-width: $max_s) {
+        .accord-trigger {
+            .title {
+                font-size: 18px;
+            }
+        }
+    }
+}
