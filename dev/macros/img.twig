@@ -3,11 +3,13 @@
 	*params.src string = название файла картинки
 	params.lazy bool = ленивая загрузка
 	params.alt string = атрибут alt
+	params.lazyAttr string = атрибут для lazyload
  #}
-{% macro get(params) %}
-	{% set tag = params.lazy ? 'data-src' : 'src' %}
+{% macro get(params, version = '1.0') %}
+	{% set lazyAttr = params.lazyAttr|length > 0 ? params.lazyAttr : 'data-src' %}
+	{% set tag = params.lazy ? lazyAttr : 'src' %}
 	{% set class = params.class.length > 0 ? 'class="{{params.class}}"' : '' %}
-	<img {{tag}}="/img/{{params.src}}" alt="{{ params.alt|length > 0 ? params.alt : 'image' }}" {{class}}>
+	<img {{tag}}="img/{{params.src}}?v={{version}}" alt="{{ params.alt|length > 0 ? params.alt : 'image' }}" {{class}}>
 {% endmacro %}
 
 
@@ -18,10 +20,10 @@
 	params.lazy bool = ленивая загрузка
 	params.alt string = атрибут alt картинки
  #}
-{% macro getSvg(params) %}
+{% macro getSvg(params, version = '1.0') %}
 	{% if params.img %}
 		{% set tag = params.lazy ? 'data-src' : 'src' %}
-		<img {{tag}}="/img/svg/{{params.src}}.svg" alt="{{ params.alt|length > 0 ? params.alt : 'image' }}">
+		<img {{tag}}="img/svg/{{params.src}}.svg?v={{version}}" alt="{{ params.alt|length > 0 ? params.alt : 'image' }}">
 	{% else %}
 		{{ getFile('img/svg/' ~ params.src ~ '.svg') }}
 	{% endif %}

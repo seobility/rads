@@ -1,3 +1,5 @@
 {% macro ajax(name, attr = 'action') %}
-	{{attr}}="/ajax/{{name}}"
+	{{attr}}="/front/ajax/{{name}}"
 {% endmacro %}
+
+{% macro url(path) %}/front/{{path}}{% endmacro %}

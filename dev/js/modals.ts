@@ -1,5 +1,4 @@
 import dom from "./DOM"
-import { headerState } from "./header"
 import { dispatchEvents, removeCompensateForScrollbar, setCompensateForScrollbar } from "./utils"
 
 export const initModals = (context: HTMLElement) => {
@@ -26,11 +25,7 @@ const initOpeningModals = (context: HTMLElement) => {
 export const closeModal = (modal: string | HTMLElement) => {
     let domModal = typeof modal === 'string' ? dom(`#${modal}`) : dom(modal)
     domModal.removeClass('active')
-    // Модалка может быть открыта при открытом мобильном меню.
-    // Возврат скролла должен происходить только в том случае, если меню закрыто
-    if (!headerState.menuOpen) {
-        removeCompensateForScrollbar()
-    }
+    removeCompensateForScrollbar()
     dispatchEvents(domModal.get(0), 'modal:close')
 }
 

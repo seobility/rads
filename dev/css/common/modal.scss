@@ -20,79 +20,14 @@
         z-index: 0;
     }
 
-    .modal-close {
-        @extend .icon-close;
-        margin-bottom: 20px;
-        margin-left: auto;
-        span {
-            width: 24px;
-            height: 24px;
-        }
-        span::before,
-        span::after {
-            background-color: rgba(#fff, 0.3);
-        }
-        &:hover {
-            span::before,
-            span::after {
-                background-color: #fff;
-            }
-        }
-    }
-
     .modal-content {
         position: relative;
         margin: auto;
-        max-width: 400px;
-        padding: 30px;
-        background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.1),
-                rgba(0, 0, 0, 0.1)
-            ),
-            linear-gradient(180deg, #006d85 0%, #40c0dc 100%), #111111;
-        border-radius: 30px;
-        color: #fff;
         z-index: 1;
-    }
-
-    @media (max-width: $max_sm) {
-        .modal-content {
-            max-width: 100%;
-            min-height: 100%;
-            border-radius: 0;
-            padding: 20px;
-        }
     }
 }
 
 .modal.active {
     opacity: 1;
     pointer-events: auto;
-}
-
-.modal-contact {
-    .heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        .title {
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .modal-close {
-            margin-right: -10px;
-            margin-bottom: 0;
-            margin-left: 15px;
-        }
-    }
-
-    .form-contact {
-        max-width: 100%;
-        .btn {
-            font-size: 16px;
-        }
-    }
 }
