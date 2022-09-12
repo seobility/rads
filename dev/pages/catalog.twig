@@ -3,11 +3,5 @@
 {% extends "layouts::layout.twig" %}
 
 {% block main %}
-	<section class="section section-catalog">
-		<div class="container">
-			<h2 class="section-title">
-				Каталог компаний и услуг
-			</h2>
-		</div>
-	</section>
+	{% include "templateSections::section-catalog.twig" %}
 {% endblock %}

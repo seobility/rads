@@ -19,7 +19,15 @@ body {
 }
 
 .section {
-    padding: 30px 0;
+    padding: 40px 0;
+
+    &:first-child {
+        padding-top: 30px;
+    }
+
+    &:last-child {
+        padding-bottom: 80px;
+    }
 }
 
 .container {

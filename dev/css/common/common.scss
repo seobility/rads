@@ -103,9 +103,28 @@ body {
         text-align: center;
         width: 50px;
         height: 50px;
+        background-color: #f7f7fa;
         border: 1px solid #01ca7e;
         border-radius: 0 50% 50%;
         color: #01ca7e;
         font-size: 14px;
+    }
+}
+
+.link-back {
+    display: flex;
+    align-items: center;
+    color: #8d8f9d;
+    font-size: 16px;
+
+    .icon {
+        display: flex;
+        flex-shrink: 0;
+        margin-right: 5px;
+        img,
+        svg {
+            width: 16px;
+            height: 16px;
+        }
     }
 }
