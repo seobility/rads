@@ -12,16 +12,20 @@
 		</title>
 		<script>
 			{{ getFile('./js/inline.js') }}</script>
-		<link rel="stylesheet" href="/css/index.min.css">
+		<link rel="stylesheet" href="css/index.min.css">
 	</head>
 	<body>
 		<div class="site-wrap">
 			{% include "header.twig" %}
-			<main class="main"> {% block main %}{% endblock %}
-				<aside class></aside>
-			</main>
-			{% include "footer.twig" %}
-		</div>
-		<script src="/js/index.min.js"></script>
-	</body>
-</html>
+			<main class="main">
+				{% include "templateParts::sidebar.twig" %}
+
+				<div class="site-content"> {% block main %}{% endblock %}
+					</div>
+
+				</main>
+				{% include "footer.twig" %}
+			</div>
+			<script src="js/index.min.js"></script>
+		</body>
+	</html>

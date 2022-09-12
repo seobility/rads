@@ -11,18 +11,21 @@ body {
 
 .main {
     flex-grow: 1;
+    display: flex;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    width: 215px;
+    padding: 25px 30px;
+}
+
+.site-content {
+    width: 100%;
 }
 
 .section {
-    padding: 80px 0;
-
-    @media (max-width: $max_md) {
-        padding: 50px 0;
-    }
-
-    @media (max-width: $max_s) {
-        padding: 40px 0;
-    }
+   
 }
 
 .container {
