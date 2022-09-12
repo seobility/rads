@@ -1,0 +1,104 @@
+.sidebar {
+    flex-shrink: 0;
+    width: 215px;
+    padding: 25px 15px 25px 30px;
+
+    .sidebar-block {
+        position: relative;
+        &:not(:first-child) {
+            padding-top: 15px;
+            margin-top: 16px;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 155px;
+                height: 1px;
+                background-color: #dfe4ea;
+            }
+        }
+    }
+
+    .sidebar-block-additional {
+        margin-top: 160px;
+    }
+
+    .sidebar-title {
+        color: #8d8f9d;
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .menu {
+        .menu-item {
+        }
+        .menu-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            color: #333;
+            font-size: 14px;
+            transition-property: color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+        .menu-link::before {
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: calc(100% + 20px);
+            height: 100%;
+            border: 1px solid #01ca7e;
+            border-radius: 0px 38px 38px 16px;
+        }
+        .icon {
+            flex-shrink: 0;
+            display: flex;
+            margin-right: 7px;
+            img,
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .menu-link:hover {
+            color: #01ca7e;
+        }
+        .menu-item.active {
+            .menu-link {
+                color: #01ca7e;
+            }
+            .menu-link::before {
+                content: '';
+            }
+        }
+    }
+
+    .menu-additional {
+        .menu-item {
+            display: flex;
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+        .menu-link {
+            color: #8d8f9d;
+            font-size: 14px;
+            transition-property: color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+        .menu-link:hover {
+            color: #01ca7e;
+        }
+        .menu-item.active {
+            .menu-link {
+                color: #01ca7e;
+            }
+        }
+    }
+}
