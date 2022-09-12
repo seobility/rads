@@ -1,7 +1,7 @@
 body {
     color: #333;
     font-family: 'Golos';
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
 }
 
@@ -16,7 +16,7 @@ h6 {
 
 h1 {
     font-size: 52px;
-    
+
     @media (max-width: $max_md) {
         font-size: 40px;
     }
@@ -28,7 +28,6 @@ h1 {
 
 h2 {
     font-size: 40px;
-    
 }
 
 h3 {

@@ -101,19 +101,22 @@
             align-items: center;
             cursor: pointer;
         }
-        .name .icon {
-            display: flex;
-            flex-shrink: 0;
-            margin-left: 3px;
-            img,
-            svg {
-                width: 16px;
-                height: 16px;
-            }
-        }
         .type {
             color: #8d8f9d;
             font-size: 11px;
+        }
+    }
+
+    .profile-arrow {
+        display: flex;
+        align-self: flex-start;
+        flex-shrink: 0;
+        margin-top: 8px;
+        margin-left: 3px;
+        img,
+        svg {
+            width: 16px;
+            height: 16px;
         }
     }
 }
