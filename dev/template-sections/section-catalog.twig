@@ -28,30 +28,143 @@
 			</button>
 
 		</form>
-		<form action="#" class="form form catalog-filters"></form>
+		<form action="#" class="form form-catalog-filters"></form>
 
 		<div class="row row-catalog">
 			<div class="col col-main">
 				<div class="cards-companies">
 					<div class="card">
 						<div class="card-body">
-							<div class="preview"></div>
-							<div class="info"></div>
-							<div class="settings">
-								<div class="dropdown js-dropdown">
-									<div class="js-dropdown-trigger">
-										2222
+							<div class="preview">
+								<span class="img">
+									{{img.get({src:"card-company-1.png"})}}
+								</span>
+							</div>
+							<div class="info">
+								<div class="headline">
+									<h4 class="title">
+										<span class="text">
+											ООО «Таттех»
+										</span>
+										<span class="icon"></span>
+									</h4>
+									<div class="description">
+										Предлагаем перевозку сборных грузов из Объединенных Арабских Эмиратов в Россию и в обратном направлении.
 									</div>
 								</div>
+								<div class="country">
+									<span class="flag">
+										{{img.getSvg({src:"flag-ru"})}}
+									</span>
+									<span class="text">
+										Россия
+									</span>
+								</div>
+								<ul class="list-props">
+									<li class="list-item">
+										<span class="prop">
+											Год основания:
+										</span>
+										<span class="value">
+											2015
+										</span>
+									</li>
+									<li class="list-item">
+										<span class="prop">
+											Количество сотрудников:
+										</span>
+										<span class="value">
+											20-30
+										</span>
+									</li>
+									<li class="list-item">
+										<span class="prop">
+											Отрасль:
+										</span>
+										<span class="value">
+											Деятельность домашних хозяйств в качестве работодателей; недифференцированная деятельность
+										</span>
+									</li>
+								</ul>
+								<div class="review">
+									<span class="count">
+										4.9/5
+									</span>
+									<span class="total">
+										(11 отзывов)
+									</span>
+								</div>
+								<span class="tag">
+									У вас в партнерах
+								</span>
 							</div>
 							<div class="settings">
 								<div class="dropdown js-dropdown">
-									<div class="js-dropdown-trigger">
-										455
+									<div class="dropdown-trigger js-dropdown-trigger">
+										<span class="icon icon-open">
+											{{img.getSvg({src:"more-horizontal"})}}
+										</span>
+										<span class="icon icon-close">
+											{{img.getSvg({src:"close"})}}
+										</span>
 									</div>
-								</div>
-							</div>
+									<div class="dropdown-body">
+										<ul class="list">
+											<li class="list-item">
+												<a href="#" class="link">
+													<span class="icon">
+														{{img.getSvg({src:"message-square"})}}
+													</span>
+													<span class="text">
+														Написать сообщение
+													</span>
+												</a>
+											</li>
+											<li class="list-item">
+												<a href="#" class="link">
+													<span class="icon">
+														{{img.getSvg({src:"user"})}}
+													</span>
 
+													<span class="text">
+														Посмотреть профиль
+													</span>
+												</a>
+											</li>
+											<li class="list-item">
+												<a href="#" class="link">
+													<span class="icon">
+														{{img.getSvg({src:"bookmark"})}}
+													</span>
+													<span class="text">
+														Добавить в закладки
+													</span>
+												</a>
+											</li>
+											<li class="list-item">
+												<a href="" class="link">
+													<span class="icon">
+														{{img.getSvg({src:"share-2"})}}
+													</span>
+													<span class="text">
+														Поделиться ссылкой
+													</span>
+												</a>
+											</li>
+											<li class="list-item">
+												<a href="" class="link">
+													<span class="icon">
+														{{img.getSvg({src:"user-plus"})}}
+													</span>
+													<span class="text">
+														Добавить в партнеры
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="card-foot"></div>
 					</div>
@@ -69,11 +182,80 @@
 						</a>
 					</div>
 				</div>
-				<div class="cards-companies-preview"></div>
-				<div class="cards-ads-preview"></div>
+				<div class="cards-companies-preview">
+					<a href="#" class="card">
+						<span class="img">
+							{{img.get({src:"card-company-preview-1.png"})}}
+						</span>
+						<h4 class="title">
+							ООО «СТРОЙТРАНСГРУЗ.РФ»
+						</h4>
+						<div class="description">
+							Автомобильные грузоперевозки по России
+						</div>
+						<div class="review">
+							<span class="count">
+								4.9/5
+							</span>
+							<span class="total">
+								(11 отзывов)
+							</span>
+						</div>
+						<div class="country">
+							<span class="flag">
+								{{img.getSvg({src:"flag-ru"})}}
+							</span>
+							<span class="text">
+								Россия
+							</span>
+						</div>
+					</a>
+				</div>
+				<div class="cards-ads-preview">
+					<a href="#" class="card">
+						<span class="img">
+							{{img.get({src:"card-ad-preview-1.png"})}}
+						</span>
+						<span class="badge badge-sm badge-grey">
+							ADS
+						</span>
+						<h4 class="title">
+							6-й Международный авиасалон в Бахрейне BIAS. 09.09 - 11.09.2022
+						</h4>
+					</a>
+				</div>
 			</div>
 		</div>
 
-		<div class="cards-ads"></div>
+		<div class="cards-ads">
+			<div class="card">
+				<div class="card-img">
+					<span class="type"></span>
+					<span class="img">
+						{{img.get({src:"card-ad-1.png"})}}
+					</span>
+				</div>
+				<div class="card-info">
+					<h4 class="title">
+						Mainfreight
+					</h4>
+					<div class="description">
+						Обеспечит качественную бесперебойную логистику на всём пространстве арабского мира
+					</div>
+					<ul class="list-services">
+						<li class="list-item">
+							<a href="#" class="link">
+								Услуги и цены
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="#" class="link">
+								Контакты
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
