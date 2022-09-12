@@ -1,10 +1,7 @@
 {
     "compilerOptions": {
         "module": "CommonJS", // Определяет тип импорта кода в итоговом файле, прописанном в "outFile".
-        "lib": [
-            "ESNext",
-            "DOM"
-        ], // Набор библиотечных файлов полифилов, которые будут включены в итоговый выходной файл.
+        "lib": ["ESNext", "DOM"], // Набор библиотечных файлов полифилов, которые будут включены в итоговый выходной файл.
         "jsx": "react", // Включать ли поддержку ".tsx" файлов?
         "allowJs": true, // Разрешать компилировать файлы с JavaScript-кодом?
         "skipLibCheck": false,
@@ -29,26 +26,12 @@
         //
         "baseUrl": "./dev",
         "paths": {
-            "Img/*": [
-                "dev/img/*"
-            ],
-            "Svg/*": [
-                "dev/img/svg/*"
-            ],
-            "Js/*": [
-                "dev/js/*"
-            ],
-            "Css/*": [
-                "dev/css/*"
-            ]
-        },
+            "Img/*": ["dev/img/*"],
+            "Svg/*": ["dev/img/svg/*"],
+            "Js/*": ["dev/js/*"],
+            "Css/*": ["dev/css/*"]
+        }
     },
-    "include": [
-        "./dev/js/**/*.d.ts",
-        "./dev/js/**/*.ts",
-        "./dev/js/**/*.tsx"
-    ],
-    "exclude": [
-        "./node_modules"
-    ],
+    "include": ["./dev/js/**/*.d.ts", "./dev/js/**/*.ts", "./dev/js/**/*.tsx"],
+    "exclude": ["./node_modules"]
 }

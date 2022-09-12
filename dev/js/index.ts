@@ -5,9 +5,9 @@ import "./polyfill"
 
 import { initForms } from "./form"
 import { loadingBtn } from "./loadingBtn"
-import { initAccordions } from "./accordion/accordion"
 import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
+import { initDropdowns } from "./dropdown"
 
 
 let IS_INITED = false
@@ -21,8 +21,8 @@ export const dynamicFunctions = (context?: HTMLElement) => {
 
     initForms(context)
     loadingBtn(context)
-    initAccordions(context)
     initModals(context)
+    initDropdowns(context)
 }
 
 

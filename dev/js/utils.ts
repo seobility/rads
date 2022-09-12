@@ -83,6 +83,12 @@ export const reflow = (el: HTMLElement) => {
     el.offsetHeight
 }
 
+export const execute = (callback: Function, ...args: any[]) => {
+    if (typeof callback === 'function') {
+        callback(...args)
+    }
+}
+
 export const setCompensateForScrollbar = () => {
     document.body.classList.add('compensate-for-scrollbar')
 }
