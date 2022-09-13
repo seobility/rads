@@ -4,6 +4,7 @@ import { dropdown, DropdownInstances } from "./tools"
 
 let isInited: boolean
 
+
 export const initDropdowns = (context?: HTMLElement) => {
     if (isInited) {
         window.removeEventListener("click", onWindowClick)

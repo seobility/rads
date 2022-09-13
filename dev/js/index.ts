@@ -1,7 +1,6 @@
 import "loaders.css"
-import "Css/index.scss"
+import "css/index.scss"
 import "./polyfill"
-
 
 import { initForms } from "./form"
 import { loadingBtn } from "./loadingBtn"
@@ -34,7 +33,6 @@ export const dynamicFunctions = (context?: HTMLElement) => {
 const staticFunctions = () => {
     compensateForScrollbar()
 }
-
 
 window.dynamicFunctions = dynamicFunctions
 
