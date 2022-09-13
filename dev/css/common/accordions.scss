@@ -1,0 +1,25 @@
+.accord {
+    .accord-trigger {
+        cursor: pointer;
+    }
+
+    &.disabled,
+    &.collapsing {
+        pointer-events: none;
+    }
+
+    &.collapse:not(.active) {
+        .accord-body {
+            display: none;
+        }
+    }
+
+    &.collapsing {
+        .accord-body {
+            overflow: hidden;
+            pointer-events: none;
+            height: 0;
+            transition: height 0.6s ease;
+        }
+    }
+}

@@ -9,7 +9,8 @@ import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
 import { initDropdowns } from "./dropdown"
 import { lazyLoad } from "./lazyLoad";
-
+import { initAccordions } from "./accordion"
+import { initIntlTel } from "./intlInput"
 
 let IS_INITED = false
 
@@ -21,10 +22,12 @@ export const dynamicFunctions = (context?: HTMLElement) => {
     IS_INITED = true
 
     initForms(context)
+    initIntlTel(context)
     loadingBtn(context)
     initModals(context)
     initDropdowns(context)
     lazyLoad(context)
+    initAccordions(context)
 }
 
 

@@ -1,3 +1,308 @@
+.cards-companies .card {
+    $padding: 30px;
+    $radius: 30px;
+
+    background-color: #fff;
+    backdrop-filter: blur(16px);
+    border-radius: $radius;
+    padding: $padding;
+
+    .card-body {
+        display: flex;
+    }
+
+    .preview {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        width: 230px;
+        margin-right: 30px;
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .preview .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 130px;
+        background-color: #ffffff;
+        box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+            0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+        border-radius: 20px;
+        margin-bottom: 15px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .preview .type {
+        color: #8d8f9d;
+        margin-bottom: 5px;
+    }
+
+    .preview .status {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            opacity: 0.5;
+        }
+        &.offline {
+            color: #8d8f9d;
+            &::before {
+                background-color: #8d8f9d;
+            }
+        }
+        &.online {
+            color: #01ca7e;
+            &::before {
+                background-color: #01ca7e;
+            }
+        }
+    }
+
+    .preview .agent {
+        .agent-row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+        .agent-img {
+            display: flex;
+            flex-shrink: 0;
+            margin-right: 9px;
+            &:empty {
+                display: none;
+            }
+            img,
+            svg {
+                width: 42px;
+                height: 42px;
+                object-fit: cover;
+            }
+        }
+        .agent-info {
+            display: flex;
+            flex-direction: column;
+            .position {
+                color: #8d8f9d;
+                margin-bottom: 2px;
+            }
+            .name {
+                font-size: 16px;
+            }
+        }
+        .agent-more {
+            color: #8d8f9d;
+        }
+    }
+
+    .info {
+    }
+
+    .info .headline {
+        margin-bottom: 15px;
+        .title {
+            @extend .h3;
+            display: flex;
+            align-items: center;
+        }
+        .title .icon {
+            display: flex;
+            flex-shrink: 0;
+            margin-left: 5px;
+            width: 24px;
+            height: 24px;
+        }
+        .description {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+    }
+
+    .info .country {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        font-weight: 600;
+        .flag {
+            display: flex;
+            flex-shrink: 0;
+            margin-right: 5px;
+        }
+        .flag img,
+        .flag svg {
+            width: 20px;
+            height: 15px;
+        }
+    }
+
+    .info .list-props {
+        margin-bottom: 5px;
+        .list-item:not(:last-child) {
+            margin-bottom: 5px;
+        }
+        .prop {
+            color: #8d8f9d;
+            font-size: 14px;
+        }
+        .value {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+
+    .info .review {
+        margin-bottom: 10px;
+        .count {
+            color: #ffc107;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .total {
+            color: #8d8f9d;
+            font-size: 14px;
+        }
+    }
+
+    .info .badges {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        > * {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .settings {
+        flex-shrink: 0;
+        width: fit-content;
+        margin-left: 18px;
+    }
+
+    .settings .dropdown {
+        @extend .dropdown-default;
+        .dropdown-body {
+            padding: 30px 40px 30px 20px;
+        }
+    }
+
+    .card-foot {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(#c9c8d3, 0.2);
+    }
+
+    .services {
+        .title {
+            margin-bottom: 10px;
+        }
+        .list-services {
+        }
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            .prop {
+                color: #01ca7e;
+                max-width: 538px;
+                margin-right: 30px;
+            }
+            .value {
+                text-align: right;
+            }
+        }
+        .show-more {
+            cursor: pointer;
+            color: #01ca7e;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+    }
+
+    .card-additional {
+        background-color: #e4ffef;
+        padding: 15px $padding;
+        margin: 20px -#{$padding} -#{$padding};
+        border-radius: 0 $radius $radius $radius;
+    }
+
+    .recomending {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .recomending .headline {
+        margin-right: 30px;
+        .title {
+            margin-bottom: 5px;
+        }
+        .description {
+            color: #8d8f9d;
+        }
+    }
+
+    .recomending .list-recomending {
+        display: flex;
+        align-items: center;
+        > * {
+            position: relative;
+            &:not(:last-child) {
+                margin-right: -10px;
+            }
+            $j: 6;
+            @for $i from 1 to $j {
+                &:nth-child(#{$i}) {
+                    z-index: $j - $i;
+                }
+            }
+        }
+        .link,
+        .link-more {
+            display: flex;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e4ffef;
+            border-radius: 50%;
+        }
+        .link {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .link-more {
+            align-items: center;
+            justify-content: center;
+            background-color: #01ca7e;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+    &.card-online {
+        background: linear-gradient(114.78deg, #d7ffe2 6.68%, #bfffc6 101.7%);
+    }
+}
+
 .cards-companies-preview .card {
     display: flex;
     flex-direction: column;
@@ -46,11 +351,11 @@
     .country {
         display: flex;
         align-items: center;
+        font-weight: 600;
         .flag {
             display: flex;
             flex-shrink: 0;
             margin-right: 5px;
-            font-weight: 600;
             img,
             svg {
                 width: 20px;

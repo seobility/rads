@@ -15,32 +15,6 @@ body {
     position: relative;
 }
 
-.accord {
-    .accord-trigger {
-        cursor: pointer;
-    }
-
-    &.disabled,
-    &.collapsing {
-        pointer-events: none;
-    }
-
-    &.collapse:not(.active) {
-        .accord-body {
-            display: none;
-        }
-    }
-
-    &.collapsing {
-        .accord-body {
-            overflow: hidden;
-            pointer-events: none;
-            height: 0;
-            transition: height 0.6s ease;
-        }
-    }
-}
-
 .side-list-friends {
     position: fixed;
     top: 110px;
@@ -114,7 +88,7 @@ body {
 .link-back {
     display: flex;
     align-items: center;
-    color: #8d8f9d;
+    color: #8d8f9d !important;
     font-size: 16px;
 
     .icon {

@@ -1,0 +1,225 @@
+<div class="{{classNames([ "card", { "card-personal": data.personal, "card-online": data.preview.online } ])}}">
+	<div class="card-body">
+		<div class="preview">
+			<span class="img">
+				{{img.get({src:data.preview.img})}}
+			</span>
+			<span class="type">
+				{{data.preview.type}}
+			</span>
+			{% if data.preview.online  %}
+				<span class="status online">
+					Онлайн
+				</span>
+			{% else %}
+				<span class="status offline">
+					11.06.2022, 12:32
+				</span>
+			{% endif %}
+			{% if data.preview.agent %}
+				<div class="agent">
+					<div class="agent-row">
+						{% if data.preview.agent.img %}
+							<span class="agent-img">
+								{{img.get({src:data.preview.agent.img})}}
+							</span>
+						{% else %}
+							<span class="agent-img empty">
+								{{img.getSvg({src: "user"})}}
+							</span>
+						{% endif %}
+						<div class="agent-info">
+							<span class="position">
+								Представитель
+							</span>
+							<span class="name">
+								{{data.preview.agent.name}}
+							</span>
+						</div>
+					</div>
+					<span class="agent-more">
+						+ еще 3 представителя
+					</span>
+				</div>
+			{% endif %}
+		</div>
+		<div class="info">
+			<div class="headline">
+				<h4 class="title">
+					<span class="text">
+						{{data.info.title}}
+					</span>
+					{% if data.personal != true %}
+						<span class="icon">
+							{{img.getSvg({src:"checked"})}}
+						</span>
+					{% endif %}
+
+				</h4>
+				<div class="description">
+					{{data.info.description}}
+				</div>
+			</div>
+			<div class="country">
+				<span class="flag">
+					{{img.getSvg({src:"flag-ru"})}}
+				</span>
+				<span class="text">
+					{{data.info.country.name}}
+				</span>
+			</div>
+			<ul class="list-props">
+				{% for prop in data.info.props %}
+					<li class="list-item">
+						<span class="prop">
+							{{prop[0]}}
+						</span>
+						<span class="value">
+							{{prop[1]}}
+						</span>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="review">
+				<span class="count">
+					{{data.info.reviews.rate}}
+					/5
+				</span>
+				<span class="total">
+					(
+					{{data.info.reviews.total}}
+					отзывов)
+				</span>
+			</div>
+			{% if data.info.badges %}
+				<div class="badges">
+					{% for badge in data.info.badges %}
+						<span class="badge badge-green-light">
+							{{badge}}
+						</span>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+		<div class="settings">
+			<div class="dropdown js-dropdown">
+				<div class="dropdown-trigger js-dropdown-trigger">
+					<span class="icon icon-open">
+						{{img.getSvg({src:"more-horizontal"})}}
+					</span>
+					<span class="icon icon-close">
+						{{img.getSvg({src:"close"})}}
+					</span>
+				</div>
+				<div class="dropdown-body">
+					<ul class="list">
+						<li class="list-item">
+							<a href="#" class="link">
+								<span class="icon">
+									{{img.getSvg({src:"message-square"})}}
+								</span>
+								<span class="text">
+									Написать сообщение
+								</span>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="#" class="link">
+								<span class="icon">
+									{{img.getSvg({src:"user"})}}
+								</span>
+
+								<span class="text">
+									Посмотреть профиль
+								</span>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="#" class="link">
+								<span class="icon">
+									{{img.getSvg({src:"bookmark"})}}
+								</span>
+								<span class="text">
+									Добавить в закладки
+								</span>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="" class="link">
+								<span class="icon">
+									{{img.getSvg({src:"share-2"})}}
+								</span>
+								<span class="text">
+									Поделиться ссылкой
+								</span>
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="" class="link">
+								<span class="icon">
+									{{img.getSvg({src:"user-plus"})}}
+								</span>
+								<span class="text">
+									Добавить в партнеры
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card-foot">
+		<div class="services">
+			<h6 class="title">
+				Услуги и продукты (5)
+			</h6>
+			<ul class="list-services">
+				{% for service in data.services %}
+					<li class="list-item">
+						<span class="prop">
+							{{service[0]}}
+						</span>
+						<span class="value">
+							{{service[1]}}
+						</span>
+					</li>
+				{% endfor %}
+			</ul>
+			<button class="show-more">
+				Посмотреть все
+			</button>
+		</div>
+	</div>
+	{% if data.recomending %}
+		<div class="card-additional">
+			<div class="recomending">
+				<div class="headline">
+					<h5 class="title">
+						Эту компанию рекомендуют
+					</h5>
+					<div class="description">
+						Свяжитесь и получите личные рекомендации
+					</div>
+				</div>
+				<div class="list-recomending">
+					<a href="#" class="link">
+						{{img.get({src: "friends-1.png"})}}
+					</a>
+					<a href="#" class="link">
+						{{img.get({src: "friends-2.png"})}}
+					</a>
+					<a href="#" class="link">
+						{{img.get({src: "friends-3.png"})}}
+					</a>
+					<a href="#" class="link">
+						{{img.get({src: "friends-4.png"})}}
+					</a>
+					<a href="#" class="link-more">
+						+9
+					</a>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+</div>
