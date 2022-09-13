@@ -1,7 +1,9 @@
+import { inEvent } from "js/utils"
 import dom from "../DOM"
 import { dropdown, DropdownInstances } from "./tools"
 
 let isInited: boolean
+
 
 export const initDropdowns = (context?: HTMLElement) => {
     if (isInited) {
@@ -13,12 +15,18 @@ export const initDropdowns = (context?: HTMLElement) => {
         dropdown(el)
     })
 
-    window.addEventListener("click", onWindowClick)
-    isInited = true
+    if (!isInited) {
+        isInited = true
+        window.addEventListener('click', onWindowClick)
+    }
 }
 
 
 const onWindowClick = (e: MouseEvent) => {
+    if (inEvent(e, '.js-dropdown')) {
+        return;
+    }
+
     const target = e.target as HTMLElement
 
     DropdownInstances.forEach((instance) => {

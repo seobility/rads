@@ -1,0 +1,60 @@
+.tabs-links {
+    display: flex;
+    position: relative;
+    overflow: auto;
+    margin-left: -20px;
+    margin-right: -20px;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: 0px;
+        border-top: 2px solid #dfe4ea;
+        opacity: 0.4;
+    }
+    .tab-link {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        text-align: center;
+        width: fit-content;
+        padding: 12px 20px;
+        padding-bottom: 0px;
+        @extend .hov-opacity;
+        position: relative;
+        color: #8d8f9d;
+        font-size: 16px;
+        z-index: 2;
+
+        .text {
+            display: block;
+            width: fit-content;
+            position: relative;
+            padding-bottom: 12px;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                height: 0px;
+                border-top: 2px solid #01ca7e;
+                opacity: 0;
+                transition-duration: 0.2s;
+                transition-property: opacity;
+                pointer-events: none;
+            }
+        }
+
+        &.active {
+            color: #01ca7e;
+            .text:after {
+                opacity: 1;
+            }
+        }
+    }
+}

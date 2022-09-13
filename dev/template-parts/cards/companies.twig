@@ -169,57 +169,59 @@
 			</div>
 		</div>
 	</div>
-	<div class="card-foot">
-		<div class="services">
-			<h6 class="title">
-				Услуги и продукты (5)
-			</h6>
-			<ul class="list-services">
-				{% for service in data.services %}
-					<li class="list-item">
-						<span class="prop">
-							{{service[0]}}
-						</span>
-						<span class="value">
-							{{service[1]}}
-						</span>
-					</li>
-				{% endfor %}
-			</ul>
-			<button class="show-more">
-				Посмотреть все
-			</button>
-		</div>
-	</div>
-	{% if data.recomending %}
-		<div class="card-additional">
-			<div class="recomending">
-				<div class="headline">
-					<h5 class="title">
-						Эту компанию рекомендуют
-					</h5>
-					<div class="description">
-						Свяжитесь и получите личные рекомендации
-					</div>
-				</div>
-				<div class="list-recomending">
-					<a href="#" class="link">
-						{{img.get({src: "friends-1.png"})}}
-					</a>
-					<a href="#" class="link">
-						{{img.get({src: "friends-2.png"})}}
-					</a>
-					<a href="#" class="link">
-						{{img.get({src: "friends-3.png"})}}
-					</a>
-					<a href="#" class="link">
-						{{img.get({src: "friends-4.png"})}}
-					</a>
-					<a href="#" class="link-more">
-						+9
-					</a>
-				</div>
+	{% if data.hideFoot != true %}
+		<div class="card-foot">
+			<div class="services">
+				<h6 class="title">
+					Услуги и продукты (5)
+				</h6>
+				<ul class="list-services">
+					{% for service in data.services %}
+						<li class="list-item">
+							<span class="prop">
+								{{service[0]}}
+							</span>
+							<span class="value">
+								{{service[1]}}
+							</span>
+						</li>
+					{% endfor %}
+				</ul>
+				<button class="show-more">
+					Посмотреть все
+				</button>
 			</div>
 		</div>
+		{% if data.recomending %}
+			<div class="card-additional">
+				<div class="recomending">
+					<div class="headline">
+						<h5 class="title">
+							Эту компанию рекомендуют
+						</h5>
+						<div class="description">
+							Свяжитесь и получите личные рекомендации
+						</div>
+					</div>
+					<div class="list-recomending">
+						<a href="#" class="link">
+							{{img.get({src: "friends-1.png"})}}
+						</a>
+						<a href="#" class="link">
+							{{img.get({src: "friends-2.png"})}}
+						</a>
+						<a href="#" class="link">
+							{{img.get({src: "friends-3.png"})}}
+						</a>
+						<a href="#" class="link">
+							{{img.get({src: "friends-4.png"})}}
+						</a>
+						<a href="#" class="link-more">
+							+9
+						</a>
+					</div>
+				</div>
+			</div>
+		{% endif %}
 	{% endif %}
 </div>

@@ -1,16 +1,17 @@
 import "loaders.css"
-import "Css/index.scss"
+import "css/index.scss"
 import "./polyfill"
-
 
 import { initForms } from "./form"
 import { loadingBtn } from "./loadingBtn"
 import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
 import { initDropdowns } from "./dropdown"
-import { initAccordions } from "./accordion"
+import { lazyLoad } from "./lazyLoad";
+// import { initAccordions } from "./accordion"
 import { initIntlTel } from "./intlInput"
-
+import { accordions } from "./accordions";
+import { tooltips } from "./tooltips";
 
 let IS_INITED = false
 
@@ -26,14 +27,16 @@ export const dynamicFunctions = (context?: HTMLElement) => {
     loadingBtn(context)
     initModals(context)
     initDropdowns(context)
-    initAccordions(context)
+    lazyLoad(context)
+    accordions(context)
+    tooltips(context)
+    // initAccordions(context)
 }
 
 
 const staticFunctions = () => {
     compensateForScrollbar()
 }
-
 
 window.dynamicFunctions = dynamicFunctions
 

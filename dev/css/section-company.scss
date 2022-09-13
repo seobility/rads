@@ -1,0 +1,27 @@
+.section-company {
+    .page-title {
+        margin-bottom: 8px;
+        .ico {
+            width: 24px;
+            height: 24px;
+            margin-left: 5px;
+            margin-top: 3px;
+        }
+    }
+    .company-content {
+        padding-top: 30px;
+    }
+    .cover-wrap {
+        display: block;
+        width: 100%;
+        height: 280px;
+        border-radius: 0px 40px 40px 40px;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

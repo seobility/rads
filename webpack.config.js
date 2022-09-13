@@ -1,14 +1,14 @@
-const fs = require("fs")
-const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
-const TerserPlugin = require("terser-webpack-plugin")
-const postcssPresetEnv = require("postcss-preset-env")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const CopyWebpackPlugin = require("copy-webpack-plugin")
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
+const fs = require("fs");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const postcssPresetEnv = require("postcss-preset-env");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
-const isDev = process.argv[2] !== "--env=build"
+const isDev = process.argv[2] !== "--env=build";
 
 const PATHS = {
     dev: "dev",
@@ -16,7 +16,7 @@ const PATHS = {
     twig: ["pages", "ajax"],
     // pages: path.resolve(__dirname, "dev/pages"),
     // ajaxPages: path.resolve(__dirname, "dev/ajax"),
-}
+};
 
 const COPY_PATHS = [
     {
@@ -31,20 +31,20 @@ const COPY_PATHS = [
         from: "fonts",
         to: "fonts",
     },
-]
+];
 
 fs.readdirSync(path.resolve(PATHS.dev, "ajax")).forEach((file) => {
     if (!file.endsWith(".json")) {
-        return
+        return;
     }
 
-    let fileName = path.basename(file)
+    let fileName = path.basename(file);
 
     COPY_PATHS.push({
         from: `ajax/${fileName}`,
         to: `ajax/${fileName}`,
-    })
-})
+    });
+});
 
 const SCRIPTS = () => {
     return createConfig({
@@ -54,47 +54,47 @@ const SCRIPTS = () => {
         cssFile: "../css/index.min.css",
         assetsFile: "./dev/src/assets/assets.js",
         // cssFile: `${DIST_DIR}/css/index.min.css`,
-    })
-}
+    });
+};
 
 const createConfig = ({ isDev, entry, cssFile }) => {
-    let PAGES = []
+    let PAGES = [];
 
     PATHS.twig.forEach((dir) => {
-        let fromPath = path.resolve(__dirname, PATHS.dev, dir)
+        let fromPath = path.resolve(__dirname, PATHS.dev, dir);
 
         // основные страницы компилируем в корень
         if (dir === "pages") {
-            dir = ""
+            dir = "";
         }
 
-        let toPath = path.resolve(__dirname, PATHS.dist, dir)
+        let toPath = path.resolve(__dirname, PATHS.dist, dir);
 
         if (dir.endsWith(".twig")) {
-            htmlFile = toPath.replace(/\.twig$/, ".html")
+            htmlFile = toPath.replace(/\.twig$/, ".html");
             PAGES.push({
                 twig: fromPath,
                 html: htmlFile,
-            })
-            return
+            });
+            return;
         }
 
         fs.readdirSync(fromPath).forEach((fileName) => {
             if (!fileName.endsWith(".twig")) {
-                return
+                return;
             }
 
-            let htmlName = fileName.replace(/\.twig$/, ".html")
+            let htmlName = fileName.replace(/\.twig$/, ".html");
 
-            let twigFile = path.resolve(fromPath, fileName)
-            let htmlFile = path.resolve(toPath, htmlName)
+            let twigFile = path.resolve(fromPath, fileName);
+            let htmlFile = path.resolve(toPath, htmlName);
 
             PAGES.push({
                 twig: twigFile,
                 html: htmlFile,
-            })
-        })
-    })
+            });
+        });
+    });
 
     return {
         mode: !isDev ? "production" : "development",
@@ -209,33 +209,33 @@ const createConfig = ({ isDev, entry, cssFile }) => {
                                      * - Получает содержимое файла
                                      */
                                     getFile(src) {
-                                        let file = path.resolve(PATHS.dev, src)
+                                        let file = path.resolve(PATHS.dev, src);
                                         if (fs.existsSync(file)) {
-                                            return fs.readFileSync(file).toString()
+                                            return fs.readFileSync(file).toString();
                                         }
-                                        return ""
+                                        return "";
                                     },
                                     getJSON(src) {
-                                        let file = path.resolve(PATHS.dev, "json/" + src + ".json")
-                                        let json = ""
+                                        let file = path.resolve(PATHS.dev, "json/" + src + ".json");
+                                        let json = "";
                                         if (fs.existsSync(file)) {
-                                            json = fs.readFileSync(file).toString()
+                                            json = fs.readFileSync(file).toString();
                                         }
-                                        return JSON.parse(json)
+                                        return JSON.parse(json);
                                     },
                                     classNames(arr) {
                                         arr = arr.map((item) => {
                                             if (typeof item === "object") {
                                                 item = Object.keys(item).map((key) => {
-                                                    if (!item[key] || key === "_keys") return ""
-                                                    return key
-                                                })
-                                                item = item.join(" ")
+                                                    if (!item[key] || key === "_keys") return "";
+                                                    return key;
+                                                });
+                                                item = item.join(" ");
                                             }
-                                            return item
-                                        })
-                                        return arr.join(" ")
-                                    }
+                                            return item;
+                                        });
+                                        return arr.join(" ");
+                                    },
                                 },
                             },
                         },
@@ -266,9 +266,9 @@ const createConfig = ({ isDev, entry, cssFile }) => {
 
             new CopyWebpackPlugin({
                 patterns: COPY_PATHS.map((data) => {
-                    data.from = path.resolve(PATHS.dev, data.from)
-                    data.to = path.resolve(PATHS.dist, data.to)
-                    return data
+                    data.from = path.resolve(PATHS.dev, data.from);
+                    data.to = path.resolve(PATHS.dist, data.to);
+                    return data;
                 }),
             }),
 
@@ -278,7 +278,7 @@ const createConfig = ({ isDev, entry, cssFile }) => {
                     filename: sets.html,
                     inject: false,
                     scriptLoading: "blocking",
-                })
+                });
             }),
 
             // Проверка типов в фоновом процессе
@@ -292,13 +292,13 @@ const createConfig = ({ isDev, entry, cssFile }) => {
         resolve: {
             extensions: [".tsx", ".jsx", ".ts", ".js", ".css", ".scss", ".png", ".svg"],
             alias: {
-                Img: path.resolve(PATHS.dev, "img"),
-                Svg: path.resolve(PATHS.dev, "img", "svg"),
-                Js: path.resolve(PATHS.dev, "js"),
-                Css: path.resolve(PATHS.dev, "css"),
+                img: path.resolve(PATHS.dev, "img"),
+                svg: path.resolve(PATHS.dev, "img", "svg"),
+                js: path.resolve(PATHS.dev, "js"),
+                css: path.resolve(PATHS.dev, "css"),
             },
         },
-    }
-}
+    };
+};
 
-module.exports = SCRIPTS
+module.exports = SCRIPTS;
