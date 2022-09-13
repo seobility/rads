@@ -23,9 +23,9 @@ export const initDropdowns = (context?: HTMLElement) => {
 
 
 const onWindowClick = (e: MouseEvent) => {
-    if (inEvent(e, '.js-dropdown')) {
-        return;
-    }
+    // if (inEvent(e, '.js-dropdown')) {
+    //     return
+    // }
 
     const target = e.target as HTMLElement
 

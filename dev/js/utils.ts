@@ -154,22 +154,22 @@ export const inEvent = (e: MouseEvent, selector: string): boolean => {
 export const sleep = async (time: number) => {
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(true);
-        }, time);
+            resolve(true)
+        }, time)
     })
 }
 
 
 export const isInViewport = (item: HTMLElement, margin = 0) => {
-    let top = item.getBoundingClientRect().top;
+    let top = item.getBoundingClientRect().top
 
     if (top > window.innerHeight - margin) {
-        return false;
+        return false
     }
 
     if ((top < 0) && (Math.abs(top) > item.offsetHeight)) {
-        return false;
+        return false
     }
 
-    return true;
+    return true
 }
