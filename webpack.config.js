@@ -215,6 +215,27 @@ const createConfig = ({ isDev, entry, cssFile }) => {
                                         }
                                         return ""
                                     },
+                                    getJSON(src) {
+                                        let file = path.resolve(PATHS.dev, "json/" + src + ".json")
+                                        let json = ""
+                                        if (fs.existsSync(file)) {
+                                            json = fs.readFileSync(file).toString()
+                                        }
+                                        return JSON.parse(json)
+                                    },
+                                    classNames(arr) {
+                                        arr = arr.map((item) => {
+                                            if (typeof item === "object") {
+                                                item = Object.keys(item).map((key) => {
+                                                    if (!item[key] || key === "_keys") return ""
+                                                    return key
+                                                })
+                                                item = item.join(" ")
+                                            }
+                                            return item
+                                        })
+                                        return arr.join(" ")
+                                    }
                                 },
                             },
                         },

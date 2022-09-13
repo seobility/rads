@@ -1,6 +1,4 @@
 import { ajaxForm } from "./ajaxForm"
-import { inputMask } from "./inputMask"
-import { inputTel } from "./inputTel"
 import { select } from "./select"
 import { validate } from "./validate"
 
@@ -21,7 +19,5 @@ const initStatic = () => {
 const initDynamic = (context?: HTMLElement) => {
     validate(context)
     ajaxForm(context)
-    // inputMask(context)
-    inputTel(context)
     select(context)
 }

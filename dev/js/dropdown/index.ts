@@ -1,19 +1,19 @@
 import dom from "../DOM"
-import { dropdown, DropdownInstances, getDropdownInstance } from "./tools"
+import { dropdown, DropdownInstances } from "./tools"
 
 let isInited: boolean
 
 export const initDropdowns = (context?: HTMLElement) => {
     if (isInited) {
-        window.removeEventListener('click', onWindowClick)
+        window.removeEventListener("click", onWindowClick)
         isInited = false
     }
 
-    dom(".js-dropdown", context).each((el: HTMLElement) => {
+    dom(".js-dropdown", context).each((el: HTMLElement, i) => {
         dropdown(el)
     })
 
-    window.addEventListener('click', onWindowClick)
+    window.addEventListener("click", onWindowClick)
     isInited = true
 }
 

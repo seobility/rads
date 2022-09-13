@@ -15,32 +15,6 @@ body {
     position: relative;
 }
 
-.accord {
-    .accord-trigger {
-        cursor: pointer;
-    }
-
-    &.disabled,
-    &.collapsing {
-        pointer-events: none;
-    }
-
-    &.collapse:not(.active) {
-        .accord-body {
-            display: none;
-        }
-    }
-
-    &.collapsing {
-        .accord-body {
-            overflow: hidden;
-            pointer-events: none;
-            height: 0;
-            transition: height 0.6s ease;
-        }
-    }
-}
-
 .side-list-friends {
     position: fixed;
     top: 110px;
@@ -114,7 +88,7 @@ body {
 .link-back {
     display: flex;
     align-items: center;
-    color: #8d8f9d;
+    color: #8d8f9d !important;
     font-size: 16px;
 
     .icon {
@@ -125,48 +99,6 @@ body {
         svg {
             width: 16px;
             height: 16px;
-        }
-    }
-}
-
-.dropdown {
-    position: relative;
-
-    .dropdown-trigger {
-        cursor: pointer;
-        .icon-open {
-            display: flex;
-        }
-        .icon-close {
-            display: none;
-        }
-    }
-
-    .dropdown-body {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        opacity: 0;
-        transform: translateY(20px);
-        pointer-events: none;
-        transition-property: opacity, transform;
-        transition-duration: 0.3s;
-        transition-timing-function: ease;
-    }
-
-    &.active {
-        .dropdown-trigger {
-            .icon-open {
-                display: none;
-            }
-            .icon-close {
-                display: flex;
-            }
-        }
-        .dropdown-body {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
         }
     }
 }

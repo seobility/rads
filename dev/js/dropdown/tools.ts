@@ -4,6 +4,8 @@ const CLASS_ACTIVE = 'active'
 const CLASS_DISABLED = 'disabled'
 
 export const dropdown = (el: HTMLElement, settings: DropdownSettings = {}) => {
+    let instance = getDropdownInstance(el)
+    if (instance) return instance
     return new Dropdown(el, settings).init()
 }
 
@@ -31,6 +33,7 @@ export class Dropdown {
 
     init() {
         setDropdownInstance(this.el, this)
+        return this
     }
 
     destroy() {

@@ -42,6 +42,12 @@
         }
     }
 
+    .cards-companies {
+        > *:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
     .cards-companies-preview,
     .cards-ads-preview {
         > *:not(:last-child) {
