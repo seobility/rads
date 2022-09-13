@@ -1,4 +1,12 @@
-<div class="{{classNames([ "card", { "card-personal": data.personal, "card-online": data.preview.online } ])}}">
+<div class="{{classNames([ "card", { "card-personal": data.personal, "card-promoted": data.promoted } ])}}">
+	{% if data.head.img %}
+		<div class="card-head">
+			<span class="img-head">
+				{{img.get({src: data.head.img})}}
+			</span>
+		</div>
+	{% endif %}
+
 	<div class="card-body">
 		<div class="preview">
 			<span class="img">

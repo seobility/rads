@@ -21,7 +21,7 @@
     }
 
     .icon {
-        display: flex;
+        @extend .ico;
         & + .text {
             margin-left: 10px;
         }

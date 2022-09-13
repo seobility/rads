@@ -1,6 +1,8 @@
 .footer {
+    padding-left: 215px;
+
     .row {
-        display: flex;
+        flex-wrap: nowrap;
         align-items: center;
         border-top: 1px solid rgba(#8d8f9d, 0.3);
         padding: 18px 0;
@@ -33,11 +35,16 @@
         }
     }
 
-    .download-mobile {
+    .links {
         display: flex;
         align-items: center;
-        margin-right: 48px !important;
-        color: #01ca7e;
+        .link {
+            display: flex;
+            align-items: center;
+        }
+        .link:not(:last-child) {
+            margin-right: 48px;
+        }
         .icon {
             display: flex;
             flex-shrink: 0;
@@ -48,9 +55,56 @@
                 height: 16px;
             }
         }
+        .link-download {
+            color: #01ca7e;
+        }
+        .link-creators {
+            color: #8d8f9d;
+        }
     }
 
-    .creators {
-        color: #8d8f9d;
+    @media (max-width: $max_lg) {
+        padding-left: 0;
+    }
+
+    @media (max-width: $max_md) {
+        .row {
+            align-items: flex-start;
+            padding: 25px 0;
+        }
+
+        .text-copy {
+            max-width: 284px;
+        }
+
+        .links {
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            .link:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    @media (max-width: $max_sm) {
+        .row {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            > *:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+
+        .text-copy {
+            margin-bottom: 15px;
+        }
+
+        .socials {
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
     }
 }

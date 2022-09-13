@@ -143,3 +143,38 @@ img[data-src] {
         right: 17px;
     }
 }
+
+.offer-search-partner {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(98.79deg, #158379 -3.95%, #24d982 99.22%);
+    border-radius: 30px;
+    padding: 16px;
+
+    .icon-offer {
+        @extend .ico;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(#fff, 0.1);
+        border-radius: 0px 15px 15px;
+        margin-right: 20px;
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+        path {
+            fill: #fff;
+        }
+    }
+
+    .description {
+        color: #fff;
+        font-size: 16px;
+        max-width: 425px;
+        margin-right: 20px;
+    }
+
+    .btn {
+        margin-left: auto;
+    }
+}
