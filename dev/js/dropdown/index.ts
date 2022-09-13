@@ -13,8 +13,10 @@ export const initDropdowns = (context?: HTMLElement) => {
         dropdown(el)
     })
 
-    window.addEventListener('click', onWindowClick)
-    isInited = true
+    if (!isInited) {
+        isInited = true
+        window.addEventListener('click', onWindowClick)
+    }
 }
 
 

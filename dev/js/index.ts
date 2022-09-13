@@ -8,6 +8,7 @@ import { loadingBtn } from "./loadingBtn"
 import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
 import { initDropdowns } from "./dropdown"
+import { lazyLoad } from "./lazyLoad";
 
 
 let IS_INITED = false
@@ -23,6 +24,7 @@ export const dynamicFunctions = (context?: HTMLElement) => {
     loadingBtn(context)
     initModals(context)
     initDropdowns(context)
+    lazyLoad(context)
 }
 
 

@@ -129,3 +129,47 @@ export const wrapElement = <K extends keyof HTMLElementTagNameMap>(el: HTMLEleme
     wrap.append(el)
     return wrap
 }
+
+
+/**
+ * - Проверяет ести ли элемент с селектором selector в событии e
+ */
+export const inEvent = (e: MouseEvent, selector: string): boolean => {
+    let path = e.composedPath()
+
+    let total = path.length
+    let i: number
+
+    for (i = 0; i < total; i++) {
+        // @ts-ignore
+        if (path[i] && path[i].tagName && path[i].matches(selector)) {
+            return true
+        }
+    }
+
+    return false
+}
+
+
+export const sleep = async (time: number) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(true);
+        }, time);
+    })
+}
+
+
+export const isInViewport = (item: HTMLElement, margin = 0) => {
+    let top = item.getBoundingClientRect().top;
+
+    if (top > window.innerHeight - margin) {
+        return false;
+    }
+
+    if ((top < 0) && (Math.abs(top) > item.offsetHeight)) {
+        return false;
+    }
+
+    return true;
+}
