@@ -28,85 +28,42 @@
 			<div class="cover-wrap">
 				{{img.get({src: 'company.png', lazy: true})}}
 			</div>
-
-			<div class="content-wrap">
-				<div class="content-card card-info">
-					<div class="card-menu dropdown js-dropdown">
-						<div class="dropdown-btn js-dropdown-trigger">
-							<span class="open">
-								{{img.getSvg({src: 'more-horizontal'})}}
-							</span>
-							<span class="close">
-								{{img.getSvg({src: 'close'})}}
-							</span>
-						</div>
-						<div class="dropdown-content">
-							<div class="dropdown-body">
-								<a href="#" class="action-btn">
-									<span class="ico">
-										{{img.getSvg({src: 'edit'})}}
-									</span>
-									<span class="text">Изменить данные</span>
-								</a>
-								<a href="#" class="action-btn">
-									<span class="ico">
-										{{img.getSvg({src: 'share'})}}
-									</span>
-									<span class="text">Поделиться ссылкой</span>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="img-col">
-						<div class="img-wrap">
-							{{img.get({src: 'logo-1.png', lazy: true})}}
-						</div>
-						<div class="desc">
-							<div class="type">Частное лицо</div>
-							<div class="date">
-								11.06.2022, 12:32
-							</div>
-						</div>
-					</div>
-					<div class="content-col">
-						<div class="service-title">
-							Таможенные услуги · Сертификация товаров · Международные грузоперевозки
-						</div>
-						<div class="country">
-							<span class="flag">
-								{{img.getSvg({src: 'flag-ru'})}}
-							</span>
-							<span class="text">Россия</span>
-						</div>
-						<div class="info-list">
-							<div class="info-row">
-								<span class="label">Год основания:</span>
-								<span class="value">2015</span>
-							</div>
-							<div class="info-row">
-								<span class="label">Количество сотрудников:</span>
-								<span class="value">20-30</span>
-							</div>
-							<div class="info-row">
-								<span class="label">
-									Отрасль:
-								</span>
-								<span class="value">
-									Деятельность домашних хозяйств в качестве работодателей; недифференцированная деятельность
-								</span>
-							</div>
-						</div>
-						<div class="reviews-count">
-							<span class="value">4.9/5</span>
-							<span class="count">(11 отзывов)</span>
-						</div>
-						<div class="tags-list">
-							<span class="tag">Потенциальный партнер</span>
-							<span class="tag">Интересовался вашей анкетой</span>
-						</div>
+			<div class="content-wrap content-aside-grid">
+				<div class="col-main">
+					<div class="cards-companies">
+						{% include "templateParts::cards/companies.twig" with {data: {
+							hideFoot: true,
+							preview: {
+								img: 'card-company-1.png',
+								type: 'Частное лицо'
+							},
+							info: {
+								title: 'Таможенные услуги · Сертификация товаров · Международные грузоперевозки',
+								country: {name: 'Россия'},
+								reviews: {
+									rate: '4.9',
+									total: 11
+								},
+								badges: ['Потенциальный партнер', 'Интересовался вашей анкетой'],
+								props: [
+									[
+										'Год основания',
+										'2015'
+									],
+									[
+										'Количество сотрудников',
+										'20-30'
+									],
+									[
+										'Отрасль',
+										'Деятельность домашних хозяйств в качестве работодателей; недифференцированная деятельность'
+									]
+								]
+							}
+						}} %}
 					</div>
 				</div>
-
+				<div class="col-side"></div>
 			</div>
 		</div>
 	</div>

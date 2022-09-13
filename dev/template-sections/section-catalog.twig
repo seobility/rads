@@ -30,15 +30,15 @@
 		</form>
 		<form action="#" class="form form-catalog-filters"></form>
 
-		<div class="row row-catalog">
-			<div class="col col-main">
+		<div class="row-catalog content-aside-grid">
+			<div class="col-main">
 				<div class="cards-companies">
 					{% for item in getJSON('catalog-companies') %}
 						{% include "templateParts::cards/companies.twig" with {data: item} %}
 					{% endfor %}
 				</div>
 			</div>
-			<div class="col col-side">
+			<div class="col-side">
 				<div class="headline">
 					<h3 class="title">
 						Новые участники
