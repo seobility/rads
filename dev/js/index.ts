@@ -8,8 +8,10 @@ import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
 import { initDropdowns } from "./dropdown"
 import { lazyLoad } from "./lazyLoad";
-import { initAccordions } from "./accordion"
+// import { initAccordions } from "./accordion"
 import { initIntlTel } from "./intlInput"
+import { accordions } from "./accordions";
+import { tooltips } from "./tooltips";
 
 let IS_INITED = false
 
@@ -26,7 +28,9 @@ export const dynamicFunctions = (context?: HTMLElement) => {
     initModals(context)
     initDropdowns(context)
     lazyLoad(context)
-    initAccordions(context)
+    accordions(context)
+    tooltips(context)
+    // initAccordions(context)
 }
 
 

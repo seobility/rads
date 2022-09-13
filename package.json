@@ -15,6 +15,8 @@
     ],
     "license": "ISC",
     "dependencies": {
+        "@popperjs/core": "^2.11.6",
+        "bootstrap": "^5.2.1",
         "imask": "^6.4.2",
         "intl-tel-input": "^17.0.18",
         "loaders.css": "^0.1.2",
@@ -27,6 +29,7 @@
         "@babel/plugin-transform-react-jsx": "^7.14.9",
         "@babel/preset-env": "^7.12.17",
         "@babel/preset-react": "^7.12.13",
+        "@types/bootstrap": "^5.2.4",
         "@types/chart.js": "^2.9.37",
         "@types/sortablejs": "^1.13.0",
         "@types/yandex-maps": "^2.1.22",
