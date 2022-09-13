@@ -9,7 +9,7 @@
             padding-top: 15px;
             margin-top: 16px;
             &::after {
-                content: '';
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -73,7 +73,7 @@
                 color: #01ca7e;
             }
             .menu-link::before {
-                content: '';
+                content: "";
             }
         }
     }
