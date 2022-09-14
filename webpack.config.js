@@ -198,6 +198,10 @@ const createConfig = ({ isDev, entry, cssFile }) => {
                         {
                             loader: "twig-html-loader",
                             options: {
+                                data: (context) => {
+                                    context.addDependency(path.resolve(PATHS.dev, "layout.twig"));
+                                    return {};
+                                },
                                 namespaces: {
                                     layouts: PATHS.dev,
                                     macros: path.resolve(PATHS.dev, "macros"),
