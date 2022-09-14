@@ -1,0 +1,11 @@
+.section-ads {
+    .cards-ads {
+        @extend .row;
+        margin: 0 -15px -30px;
+    }
+
+    .col {
+        padding: 0 15px 30px;
+        max-width: 50%;
+    }
+}

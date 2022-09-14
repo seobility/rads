@@ -1,0 +1,121 @@
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: fit-content;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 54px;
+    font-size: 14px;
+    transition-property: opacity, color, border-color, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+
+    .text {
+        & + .icon {
+            margin-left: 10px;
+        }
+    }
+
+    .icon {
+        @extend .ico;
+        & + .text {
+            margin-left: 10px;
+        }
+    }
+
+    &.btn-sm {
+        padding: 9px 20px;
+    }
+
+    &.btn-lg {
+        font-size: 16px;
+        padding: 15px 30px;
+    }
+
+    &.btn-white {
+        color: #333;
+        background-color: #fff;
+        border-color: #fff;
+    }
+
+    &.btn-green {
+        color: #fff;
+        background-color: #01ca7e;
+        border-color: #01ca7e;
+    }
+
+    &.btn-green-alt {
+        color: #01ca7e;
+        border-color: #01ca7e;
+    }
+
+    &.btn-red {
+        color: #fff;
+        background-color: #f4101e;
+        border-color: #f4101e;
+    }
+
+    &.btn-red-alt {
+        color: #f4101e;
+        border-color: #f4101e;
+    }
+
+    &.loading-btn.loading {
+        pointer-events: none;
+        .text,
+        .icon {
+            opacity: 0;
+        }
+        .preloader {
+            display: block;
+        }
+    }
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: fit-content;
+    border-radius: 80px;
+    padding: 5px 10px;
+    color: #333;
+    font-size: 11px;
+    font-weight: 400;
+
+    &.badge-sm {
+        border-radius: 18px;
+        padding: 2px 5px;
+    }
+
+    &.badge-lg {
+        font-size: 14px;
+    }
+
+    &.badge-grey {
+        color: #fff;
+        background-color: #8d8f9d;
+    }
+
+    &.badge-green {
+        background-color: #93f9b9;
+    }
+
+    &.badge-green-light {
+        background-color: #e4ffef;
+    }
+
+    &.badge-orange {
+        background-color: #f9dc93;
+    }
+
+    &.badge-pink {
+        background-color: #ffefef;
+    }
+}

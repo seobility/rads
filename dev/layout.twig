@@ -20,13 +20,28 @@
 			<main class="main">
 				{% include "templateParts::sidebar.twig" %}
 
-				{% include "templateParts::form.twig" %}
-
-				<div class="site-content"> 
-					{% block main %}{% endblock %}
-				</div>
-				<button class="js-modal-open" data-target="form-block">Form</button>
-
+				<div class="site-content"> {% block main %}{% endblock %}
+					</div>
+					<div class="side-list-friends">
+						<a href="#" class="link online">
+							<span class="count">
+								10
+							</span>
+							{{img.get({src: "friends-1.png"})}}
+						</a>
+						<a href="#" class="link">
+							{{img.get({src: "friends-2.png"})}}
+						</a>
+						<a href="#" class="link">
+							{{img.get({src: "friends-3.png"})}}
+						</a>
+						<a href="#" class="link online">
+							{{img.get({src: "friends-4.png"})}}
+						</a>
+						<a href="#" class="link-more">
+							+9
+						</a>
+					</div>
 				</main>
 				{% include "footer.twig" %}
 			</div>

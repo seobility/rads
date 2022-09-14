@@ -1,0 +1,97 @@
+// .accord {
+//     .accord-trigger {
+//         cursor: pointer;
+//     }
+
+//     &.disabled,
+//     &.collapsing {
+//         pointer-events: none;
+//     }
+
+//     &.collapse:not(.active) {
+//         .accord-body {
+//             display: none;
+//         }
+//     }
+
+//     &.collapsing {
+//         .accord-body {
+//             overflow: hidden;
+//             pointer-events: none;
+//             height: 0;
+//             transition: height 0.6s ease;
+//         }
+//     }
+// }
+
+.accordion {
+    .accordion-collapse {
+        overflow: hidden;
+        transition-duration: 0.2s;
+        transition-property: height;
+        transform: translateZ(0);
+        will-change: height;
+        &:not(.show) {
+            height: 0px;
+        }
+    }
+    .accordion-header {
+        display: flex;
+        align-items: center;
+    }
+    .accordion-button {
+        display: flex;
+        align-items: center;
+        @extend .hov-opacity;
+        color: #333333;
+        font-size: 16px;
+        font-weight: 600;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .ico {
+            display: block;
+            width: 26px;
+            height: 26px;
+            position: relative;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(141, 143, 157, 0.2);
+            transition-duration: 0.2s;
+            transition-property: border-color;
+            margin-right: 18px;
+            &:after,
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                transition-duration: 0.2s;
+                transition-property: transform;
+                background-color: #333333;
+                border-radius: 3px;
+                width: 10.33px;
+                height: 10.33px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &:before {
+                height: 2px;
+            }
+            &:after {
+                width: 2px;
+            }
+        }
+    }
+    .accordion-button:not(.collapsed) {
+        .ico:after {
+            transform: translate(-50%, -50%) scale(0);
+        }
+        .ico {
+            border-color: #01ca7e;
+        }
+    }
+    .accordion-body {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

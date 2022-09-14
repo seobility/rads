@@ -1,15 +1,18 @@
 import "loaders.css"
-import "Css/index.scss"
+import "css/index.scss"
 import "./polyfill"
-
 
 import { initForms } from "./form"
 import { loadingBtn } from "./loadingBtn"
-import { initAccordions } from "./accordion/accordion"
 import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
-import { uploadFile } from "./form/upload"
-
+import { initDropdowns } from "./dropdown"
+import { lazyLoad } from "./lazyLoad"
+// import { initAccordions } from "./accordion"
+import { initIntlTel } from "./intlInput"
+import { accordions } from "./accordions"
+import { tooltips } from "./tooltips"
+import { initMenu } from "./menu"
 
 let IS_INITED = false
 
@@ -21,17 +24,25 @@ export const dynamicFunctions = (context?: HTMLElement) => {
     IS_INITED = true
 
     initForms(context)
+    initIntlTel(context)
     loadingBtn(context)
-    initAccordions(context)
     initModals(context)
+<<<<<<< HEAD
     uploadFile(context);
+=======
+    initDropdowns(context)
+    lazyLoad(context)
+    accordions(context)
+    tooltips(context)
+    // initAccordions(context)
+>>>>>>> b2cf27d72f944776d1323387cb5f48fd28659b53
 }
 
 
 const staticFunctions = () => {
     compensateForScrollbar()
+    initMenu()
 }
-
 
 window.dynamicFunctions = dynamicFunctions
 

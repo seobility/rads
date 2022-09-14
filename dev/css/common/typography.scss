@@ -1,7 +1,7 @@
 body {
     color: #333;
-    font-family: 'Golos';
-    font-size: 16px;
+    font-family: "Golos", sans-serif;
+    font-size: 14px;
     line-height: 1.2;
 }
 
@@ -14,9 +14,10 @@ h6 {
     font-weight: 600;
 }
 
-h1 {
+h1,
+.h1 {
     font-size: 52px;
-    
+
     @media (max-width: $max_md) {
         font-size: 40px;
     }
@@ -26,35 +27,43 @@ h1 {
     }
 }
 
-h2 {
+h2,
+.h2 {
     font-size: 40px;
-    
 }
 
-h3 {
+h3,
+.h3 {
     font-size: 28px;
 }
 
-h4 {
+h4,
+.h4 {
     font-size: 24px;
 }
 
-h5 {
+h5,
+.h5 {
     font-size: 20px;
 }
 
-h6 {
+h6,
+.h6 {
     font-size: 16px;
 }
 
+.c-green {
+    color: #01ca7e;
+}
+
 .section-title {
-    font-size: 52px;
+    @extend .h1;
+}
 
-    @media (max-width: $max_md) {
-        font-size: 40px;
-    }
-
-    @media (max-width: $max_s) {
-        font-size: 28px;
-    }
+.page-title {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 600;
 }

@@ -27,23 +27,24 @@
         //
         //
         //
-        "baseUrl": "./dev",
+        "baseUrl": "./dev/",
         "paths": {
-            "Img/*": [
-                "dev/img/*"
+            "img": [
+                "./dev/img/*"
             ],
-            "Svg/*": [
-                "dev/img/svg/*"
+            "svg": [
+                "./dev/img/svg/*"
             ],
-            "Js/*": [
-                "dev/js/*"
+            "js": [
+                "./dev/js/*"
             ],
-            "Css/*": [
-                "dev/css/*"
+            "css": [
+                "./dev/css/*"
             ]
         },
     },
     "include": [
+        "./dev/js/@types/*.d.ts",
         "./dev/js/**/*.d.ts",
         "./dev/js/**/*.ts",
         "./dev/js/**/*.tsx"

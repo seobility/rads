@@ -1,0 +1,166 @@
+<section class="section section-catalog">
+	<div class="container">
+		<a href="#" class="link-back">
+			<span class="icon">
+				{{img.getSvg({src: "arrow-left"})}}
+			</span>
+			<span class="text">
+				На главную
+			</span>
+		</a>
+		<div class="page-headline">
+			<h1 class="section-title">
+				Каталог компаний и услуг
+			</h1>
+			<div class="description">
+				Платформа объединяет компании и специалистов всех направлений —  в том числе экспортные центры, гарантийные агентства, инвестиционные фонды, частные агенства.
+			</div>
+		</div>
+		<form action="#" class="form form-catalog-search">
+			<div class="input-wrap-search-reverse">
+				<button type="submit" class="icon">
+					{{img.getSvg({src: "search"})}}
+				</button>
+				<input type="text" class="input" placeholder="Поиск по деятельности, услугам или продуктам">
+			</div>
+			<button type="submit" class="btn btn-lg btn-white">
+				Найти
+			</button>
+		</form>
+		<form action="#" class="form form-catalog-filters"></form>
+
+		<div class="row-catalog content-aside-grid">
+			<div class="col-main">
+				<div class="cards-companies">
+					{% for item in getJSON('catalog-companies') %}
+						{% include "templateParts::cards/companies.twig" with {data: item} %}
+						{% if loop.index == 2 %}
+							<div class="offer-search-partner">
+								<span class="icon-offer">
+									{{img.getSvg({src: "user-plus"})}}
+								</span>
+								<div class="description">
+									Опишите вашу задачу. Мы подберем и предложим для вас оптимальных партнеров.
+								</div>
+								<a href="#" class="btn btn-white">
+									<span class="text">
+										Заказать поиск партнера
+									</span>
+								</a>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-side">
+				<div class="headline">
+					<h3 class="title">
+						Новые участники
+					</h3>
+					<div class="description">
+						из интересов
+						<a href="#">
+							транспорт, авиаперевозки и логистика, Россия, Египет...
+						</a>
+					</div>
+				</div>
+				<div class="cards-companies-preview">
+					<a href="#" class="card">
+						<span class="img">
+							{{img.get({src:"card-company-preview-1.png"})}}
+						</span>
+						<h4 class="title">
+							ООО «СТРОЙТРАНСГРУЗ.РФ»
+						</h4>
+						<div class="description">
+							Автомобильные грузоперевозки по России
+						</div>
+						<div class="review">
+							<span class="count">
+								4.9/5
+							</span>
+							<span class="total">
+								(11 отзывов)
+							</span>
+						</div>
+						<div class="country">
+							<span class="flag">
+								{{img.getSvg({src:"flag-ru"})}}
+							</span>
+							<span class="text">
+								Россия
+							</span>
+						</div>
+					</a>
+					<a href="#" class="card">
+						<span class="img">
+							{{img.get({src:"card-company-preview-2.png"})}}
+						</span>
+						<h4 class="title">
+							MARUSYA
+						</h4>
+						<div class="description">
+							Международные грузоперевозки
+						</div>
+						<div class="review">
+							<span class="count">
+								4.9/5
+							</span>
+							<span class="total">
+								(11 отзывов)
+							</span>
+						</div>
+						<div class="country">
+							<span class="flag">
+								{{img.getSvg({src:"flag-ru"})}}
+							</span>
+							<span class="text">
+								Россия
+							</span>
+						</div>
+					</a>
+					<a href="#" class="card">
+						<span class="img">
+							{{img.get({src:"card-company-preview-3.png"})}}
+						</span>
+						<h4 class="title">
+							Alsigar Masar Kadhim Razzaq
+						</h4>
+						<div class="description">
+							Деловой перевод
+						</div>
+						<div class="review">
+							<span class="count">
+								4.9/5
+							</span>
+							<span class="total">
+								(11 отзывов)
+							</span>
+						</div>
+						<div class="country">
+							<span class="flag">
+								{{img.getSvg({src:"flag-oae"})}}
+							</span>
+							<span class="text">
+								ОАЕ
+							</span>
+						</div>
+					</a>
+				</div>
+				<div class="cards-ads-preview">
+					<a href="#" class="card">
+						<span class="img">
+							{{img.get({src:"card-ad-preview-1.png"})}}
+						</span>
+						<span class="badge badge-sm badge-grey">
+							ADS
+						</span>
+						<h4 class="title">
+							6-й Международный авиасалон в Бахрейне BIAS. 09.09 - 11.09.2022
+						</h4>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

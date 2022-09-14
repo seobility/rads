@@ -1,136 +1,150 @@
-<aside class="sidebar">
-	<div class="sidebar-block">
-		<span class="sidebar-title">
-			Персональное
-		</span>
-		<ul class="menu">
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "star"})}}
-					</span>
-					<span class="text">
-						Лента интересов
-					</span>
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "message-square"})}}
-					</span>
-					<span class="text">
-						Мой профиль
-					</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<div class="sidebar-block">
-		<span class="sidebar-title">
-			Бизнес
-		</span>
-		<ul class="menu">
-			<li class="menu-item active">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "star"})}}
-					</span>
-					<span class="text">
-						Компании и услуги
-					</span>
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "message-square"})}}
-					</span>
-					<span class="text">
-						Страницы-учатсницы
-					</span>
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "message-square"})}}
-					</span>
-					<span class="text">
-						Отрасли
-					</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<div class="sidebar-block">
-		<span class="sidebar-title">
-			Информация
-		</span>
-		<ul class="menu">
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "star"})}}
-					</span>
-					<span class="text">
-						Медиацентр
-					</span>
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "message-square"})}}
-					</span>
-					<span class="text">
-						База знаний
-					</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<div class="sidebar-block">
-		<ul class="menu">
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "star"})}}
-					</span>
-					<span class="text">
-						О проекте
-					</span>
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					<span class="icon">
-						{{img.getSvg({src: "message-square"})}}
-					</span>
-					<span class="text">
-						Контакты
-					</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<div class="sidebar-block-additional">
-		<ul class="menu-additional">
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					Весь сайт
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					Помощь
-				</a>
-			</li>
-			<li class="menu-item">
-				<a href="#" class="menu-link">
-					Платные услуги
-				</a>
-			</li>
-		</ul>
+<aside class="sidebar js-sidebar">
+	<div class="sidebar-overlay"></div>
+	<div class="sidebar-content">
+		<div class="sidebar-head">
+			<button class="burger js-burger">
+				{{img.getSvg({src: "close"})}}
+			</button>
+			<a href="#" class="logo">
+				{{img.getSvg({src: "logo", img: true})}}
+			</a>
+		</div>
+		<div class="sidebar-body">
+			<div class="sidebar-block">
+				<span class="sidebar-title">
+					Персональное
+				</span>
+				<ul class="menu">
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "star"})}}
+							</span>
+							<span class="text">
+								Лента интересов
+							</span>
+						</a>
+					</li>
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "message-square"})}}
+							</span>
+							<span class="text">
+								Мой профиль
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar-block">
+				<span class="sidebar-title">
+					Бизнес
+				</span>
+				<ul class="menu">
+					<li class="menu-item active">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "star"})}}
+							</span>
+							<span class="text">
+								Компании и услуги
+							</span>
+						</a>
+					</li>
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "message-square"})}}
+							</span>
+							<span class="text">
+								Страницы-учатсницы
+							</span>
+						</a>
+					</li>
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "message-square"})}}
+							</span>
+							<span class="text">
+								Отрасли
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar-block">
+				<span class="sidebar-title">
+					Информация
+				</span>
+				<ul class="menu">
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "star"})}}
+							</span>
+							<span class="text">
+								Медиацентр
+							</span>
+						</a>
+					</li>
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "message-square"})}}
+							</span>
+							<span class="text">
+								База знаний
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar-block">
+				<ul class="menu">
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "star"})}}
+							</span>
+							<span class="text">
+								О проекте
+							</span>
+						</a>
+					</li>
+					<li class="menu-item">
+						<a href="#" class="menu-link">
+							<span class="icon">
+								{{img.getSvg({src: "message-square"})}}
+							</span>
+							<span class="text">
+								Контакты
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sidebar-foot">
+			<ul class="menu-additional">
+				<li class="menu-item">
+					<a href="#" class="menu-link">
+						Весь сайт
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" class="menu-link">
+						Помощь
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="#" class="menu-link">
+						Платные услуги
+					</a>
+				</li>
+			</ul>
+		</div>
+
 	</div>
 </aside>

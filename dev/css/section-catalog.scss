@@ -1,0 +1,50 @@
+.section-catalog {
+    .link-back {
+    }
+
+    .page-headline {
+        margin-bottom: 40px;
+        .description {
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+    }
+
+    .form-catalog-search {
+        margin-bottom: 40px;
+    }
+
+    .form-catalog-filters {
+        margin-bottom: 30px;
+    }
+
+    .col-side {
+        > *:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        .headline {
+            .title {
+                @extend .h4;
+                margin-bottom: 5px;
+            }
+            .description {
+                a {
+                    color: #01ca7e;
+                }
+            }
+        }
+    }
+
+    .cards-companies {
+        > *:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .cards-companies-preview,
+    .cards-ads-preview {
+        > *:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+}

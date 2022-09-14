@@ -1,0 +1,70 @@
+<section class="section section-company">
+	<div class="container">
+		<h1 class="page-title">
+			ООО «ДЕ-КА Транс»
+			<span class="ico">
+				{{img.getSvg({src: 'checked', lazy: true})}}
+			</span>
+		</h1>
+		<div class="tabs-links">
+			<a href="#" class="tab-link active">
+				<span class="text">Компания</span>
+			</a>
+			<a href="#" class="tab-link">
+				<span class="text">Отзывы (11)</span>
+			</a>
+			<a href="#" class="tab-link">
+				<span class="text">Партнеры (4<span class="c-green">+5</span>)</span>
+			</a>
+			<a href="#" class="tab-link">
+				<span class="text">Публикации (10)
+				</span>
+			</a>
+			<a href="#" class="tab-link">
+				<span class="text">Представители (2<span class="c-green">+1</span>)</span>
+			</a>
+		</div>
+		<div class="company-content">
+			<div class="cover-wrap">
+				{{img.get({src: 'company.png', lazy: true})}}
+			</div>
+			<div class="content-wrap content-aside-grid">
+				<div class="col-main">
+					<div class="cards-companies">
+						{% include "templateParts::cards/companies.twig" with {data: {
+							hideFoot: true,
+							preview: {
+								img: 'card-company-1.png',
+								type: 'Частное лицо'
+							},
+							info: {
+								title: 'Таможенные услуги · Сертификация товаров · Международные грузоперевозки',
+								country: {name: 'Россия'},
+								reviews: {
+									rate: '4.9',
+									total: 11
+								},
+								badges: ['Потенциальный партнер', 'Интересовался вашей анкетой'],
+								props: [
+									[
+										'Год основания',
+										'2015'
+									],
+									[
+										'Количество сотрудников',
+										'20-30'
+									],
+									[
+										'Отрасль',
+										'Деятельность домашних хозяйств в качестве работодателей; недифференцированная деятельность'
+									]
+								]
+							}
+						}} %}
+					</div>
+				</div>
+				<div class="col-side"></div>
+			</div>
+		</div>
+	</div>
+</section>

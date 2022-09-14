@@ -9,8 +9,6 @@ export const inputMask = (context: HTMLElement) => {
     })
 }
 
-
-
 const initTelMask = (input: HTMLInputElement) => {
     let options = {
         mask: '+{7}(000)000-00-00'

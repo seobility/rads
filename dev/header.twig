@@ -1,6 +1,9 @@
 <header class="header js-header">
 	<div class="container">
 		<div class="row">
+			<button class="burger js-burger">
+				{{img.getSvg({src: "menu"})}}
+			</button>
 			<a href="#" class="logo">
 				{{img.getSvg({src: "logo", img: true})}}
 			</a>
@@ -56,8 +59,8 @@
 					</li>
 				</ul>
 			</nav>
-			<div class="profile">
-				<div class="profile-head">
+			<div class="profile dropdown js-dropdown">
+				<div class="profile-head dropdown-trigger js-dropdown-trigger">
 					<span class="profile-avatar">
 						{{img.get({src: "profile-avatar.png"})}}
 					</span>
@@ -66,15 +69,16 @@
 							<span class="text">
 								Rafidah Wajd Dagher
 							</span>
-							<span class="icon">
-								{{img.getSvg({src: "chevron-down"})}}
-							</span>
 						</div>
 						<span class="type">
 							Профиль
 						</span>
 					</div>
+					<span class="profile-arrow">
+						{{img.getSvg({src: "chevron-down"})}}
+					</span>
 				</div>
+				<div class="profile-body dropdown-body js-dropdown-body"></div>
 			</div>
 		</div>
 	</div>

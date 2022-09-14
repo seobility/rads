@@ -402,7 +402,7 @@ input {
     align-items: center;
 
     .input {
-        padding-right: 60px;
+        padding-right: 54px;
     }
 
     .icon {
@@ -414,5 +414,61 @@ input {
             width: 24px;
             height: 24px;
         }
+    }
+}
+
+.input-wrap-search-reverse {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .input {
+        padding-left: 54px;
+    }
+
+    .icon {
+        position: absolute;
+        left: 20px;
+        display: flex;
+        svg,
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.form-catalog-search {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background-image: linear-gradient(90.8deg, #05978a 12.23%, #00d67c 105.24%);
+    border-radius: 0px 30px 30px 30px;
+
+    .input-wrap-search-reverse {
+        width: 100%;
+        .icon path {
+            fill: #fff;
+        }
+    }
+
+    .input {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: transparent;
+        border-radius: 0px 50px 50px 25px;
+        border-color: rgba(#fff, 0.4);
+        height: 52px;
+        &::placeholder {
+            color: #fff;
+            font-size: 14px;
+        }
+    }
+
+    .btn {
+        flex-shrink: 0;
+        margin-left: 20px;
+        height: 52px;
     }
 }

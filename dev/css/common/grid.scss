@@ -19,16 +19,29 @@ body {
 }
 
 .section {
-    padding: 30px 0;
+    padding: 40px 0;
+
+    &:first-child {
+        padding-top: 30px;
+    }
+
+    &:last-child {
+        padding-bottom: 80px;
+    }
 }
 
 .container {
     width: 100%;
     max-width: 1150px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     margin-left: auto;
     margin-right: auto;
+
+    @media (max-width: $max_sm) {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 }
 
 .row {
@@ -38,4 +51,18 @@ body {
 
 .col {
     width: 100%;
+}
+
+// сетка внутри секции с боковым сайдбаром (каталог)
+.content-aside-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    .col-main {
+        width: 100%;
+    }
+    .col-side {
+        flex-shrink: 0;
+        max-width: 255px;
+        margin-left: 30px;
+    }
 }
