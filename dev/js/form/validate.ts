@@ -8,7 +8,6 @@ export const validate = (context?: HTMLElement) => {
   })
 }
 
-
 const initValidate = (form: HTMLFormElement) => {
   let domForm = dom(form)
   let domButtons = domForm.find('button[type=submit')
@@ -171,6 +170,15 @@ export const addInputError = (input: HTMLInputElement, msg: string, replace?: Ar
       .parent()
       .addClass('has-error')
       .parent()
+      .find('.alert-input-text', true)
+      .html(getInputMessage(msg, replace))
+    return
+  }
+
+  if (input.type === 'textarea') {
+    dom(input)
+      .parent()
+      .addClass('has-error')
       .find('.alert-input-text', true)
       .html(getInputMessage(msg, replace))
     return
