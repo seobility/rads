@@ -8,6 +8,7 @@ import { loadingBtn } from "./loadingBtn"
 import { initAccordions } from "./accordion/accordion"
 import { compensateForScrollbar } from "./compensateForScrollbar"
 import { initModals } from "./modals"
+import { uploadFile } from "./form/upload"
 
 
 let IS_INITED = false
@@ -23,6 +24,7 @@ export const dynamicFunctions = (context?: HTMLElement) => {
     loadingBtn(context)
     initAccordions(context)
     initModals(context)
+    uploadFile(context);
 }
 
 
