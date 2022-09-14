@@ -20,8 +20,12 @@
 			<main class="main">
 				{% include "templateParts::sidebar.twig" %}
 
-				<div class="site-content"> {% block main %}{% endblock %}
-					</div>
+				{% include "templateParts::form.twig" %}
+
+				<div class="site-content"> 
+					{% block main %}{% endblock %}
+				</div>
+				<button class="js-modal-open" data-target="form-block">Form</button>
 
 				</main>
 				{% include "footer.twig" %}
