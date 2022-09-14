@@ -70,11 +70,13 @@ class IntlTel {
     const that = this
 
     this.intl = intlTelInput(this.input, {
-      separateDialCode: false,
+      separateDialCode: true,
       autoPlaceholder: "polite",
-      initialCountry: "auto",
+      initialCountry: "iq",
       autoHideDialCode: true,
       nationalMode: false,
+      onlyCountries: ["dz", "bh", "dj", "eg", "jo", "iq", "ye", "qa", "km", "kw",
+      "lb", "ly", "mr", "ae", "om", "ps", "ru", "sa", "sy", "so", "sd", "tn", "ma"],
       geoIpLookup: this.ajaxGeoIpLookup,
       customPlaceholder: function (placeholder: string, countryData: any) {
         that.customPlaceholder = placeholder
@@ -92,6 +94,9 @@ class IntlTel {
   onCountryChange = (e: Event) => {
     this.createMask()
     this.validate()
+    this.renderFlag()
+
+    console.log('onCountryChange');
 
     if (shouldDispatch) {
       dispatchEvents(this.form, 'input')
@@ -105,7 +110,11 @@ class IntlTel {
   };
 
   onKeyDown = (e: KeyboardEvent) => {
-    if (("+" + this.dialCode).length < this.input.value.length) return
+    /**
+     * Чтобы юзер мог стереть номер полностью
+     */
+    if (0 < this.input.value.length) return
+    // if (("+" + this.dialCode).length < this.input.value.length) return
 
     if (e.keyCode === 8 || e.keyCode === 46) {
       e.preventDefault()
@@ -117,11 +126,17 @@ class IntlTel {
     let lengthDialCode = ("+" + this.dialCode).length
     let lengthPlaceholder = this.customPlaceholder.length
 
-    if (lengthDialCode > lengthValue) {
-      this.input.value = "+" + this.dialCode
-    }
+    lengthPlaceholder = lengthPlaceholder - lengthDialCode;
 
-    this.input.value = this.input.value.replace(/[^+\d]/g, "")
+    /**
+     * Чтобы инпут не заполнялся кодом при вводе
+     */
+
+    // if (lengthDialCode > lengthValue) {
+    //   this.input.value = "+" + this.dialCode
+    // }
+
+    // this.input.value = this.input.value.replace(/[^+\d]/g, "")
 
     if (lengthValue > lengthPlaceholder) {
       let valueSplit = this.input.value.split('')
@@ -147,8 +162,19 @@ class IntlTel {
     let placeholderWithoutDial = this.customPlaceholder
       .replace(`+${this.dialCode}`, "")
       .replace(/[0-9]/g, "0")
-    this.mask = `+{${this.dialCode}}${placeholderWithoutDial}`
+    /**
+     * Маска без кода страны
+     */
+    // this.mask = `+{${this.dialCode}}${placeholderWithoutDial}`
+    this.mask = `${placeholderWithoutDial}`
+
     this.requiredLength = unmaskPhone(this.mask).length
+  }
+
+  renderFlag() {
+    console.log(this.intl.getSelectedCountryData())
+    console.log(dom('.iti__flag').first());
+    dom('.iti__flag').first()
   }
 
   private appendPlaceForErrors() {
